@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 class Login extends Controller
 {
-    public function login(){
+    public function formulaire(){
      
 
         return view('connexion');
@@ -19,15 +19,15 @@ class Login extends Controller
             'password' => ['required'],
         ]);
 
-    $resultat=
+
 Auth::attempt([
          'email'=> $request->get('email'),
          'pseudo'=> $request->get('pseudo'),
          'mp'=> $request->input('password'),
 ]);
-var_dump($resultat);  
+
       
-    return "conectée";
-     
+    return view('Acceuil');
+     //mettre la vue de l'acceuil
     }
 }

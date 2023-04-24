@@ -2,6 +2,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Utilisateur;
 use App\Http\Controllers\Connexion;
+use App\Http\Controllers\Inscriptiontraitement;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,14 +20,13 @@ Route::get('/',  function () {
 });
 */
 
-Route::get('/home', [Utilisateur::class, 'index'])->name('home');
+Route::get('/home', [InscriptionController::class, 'index'])->name('home');
 
-Route::get('/connexion',  [Connexion::class, 'login'])->name('connexion');
+Route::get('/connexion',  [ConnexionController::class, 'formulaire'])->name('connexion');
 
+Route::post('/connexion',  [ConnexionController::class, 'traitement'])->name('connexion');
 
-Route::post('/inscription', function () {
-    return view('inscription');
-});
+Route::post('/inscription', [InscriptionController::class, 'registre'])->name('inscription');
 
-Route::get('/inscription', [Utilisateur::class, 'registre'])->name('inscription');
+Route::get('/inscription', [InscriptionController::class, 'showformulaire'])->name('inscription');
 
