@@ -6,7 +6,7 @@ use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
 use App\Models\Inscriptionutilisateur;
 
-class Inscriptiontraitement extends Controller { 
+class InscriptionController extends Controller { 
 
 
 public function registre(Request $request)

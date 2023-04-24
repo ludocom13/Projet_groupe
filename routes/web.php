@@ -2,6 +2,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Utilisateur;
 use App\Http\Controllers\Connexion;
+use App\Http\Controllers\ConnexionstaffController;
 use App\Http\Controllers\Inscriptiontraitement;
 
 /*
@@ -30,3 +31,4 @@ Route::post('/inscription', [InscriptionController::class, 'registre'])->name('i
 
 Route::get('/inscription', [InscriptionController::class, 'showformulaire'])->name('inscription');
 
+Route::get('/staff',[ConnexionstaffController::class, 'staffco'])->name('staff');
