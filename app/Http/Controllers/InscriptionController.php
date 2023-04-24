@@ -16,6 +16,7 @@ public function registre(Request $request)
             'prenom'=>['require|string|max:15'],
             'email'=>['required|string|max:50|unique:users'],
             'pseudo'=>['required|string|max:20|unique:users'],
+            'mot_de_passe'=>['required|string|min:8'],
 
         ]);
     }

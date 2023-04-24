@@ -7,7 +7,7 @@
    
   @csrf
    
-    <input type="password" placeholder="mot de passe" name="mp">
+    <input type="password" placeholder="mot de passe" name="mot_de_passe">
  
     <input type="text" placeholder="email" name="email">
 

@@ -23,7 +23,7 @@ class Login extends Controller
 Auth::attempt([
          'email'=> $request->get('email'),
          'pseudo'=> $request->get('pseudo'),
-         'mp'=> $request->input('password'),
+         'mot_de_passe'=> $request->input('password'),
 ]);
 
       

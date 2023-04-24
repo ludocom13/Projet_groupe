@@ -11,7 +11,7 @@ class Inscriptionutilisateur extends Model implements Authenticatable
 {
     use BasicAuthenticatable;
 
-    protected $fillable = ['mp', 'email', 'pseudo'];
+    protected $fillable = ['mot_de_passe', 'email', 'pseudo'];
 
 /**
      * Get the password for the user.
