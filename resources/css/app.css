@@ -1,0 +1,88 @@
+ body{
+    background-color: black;
+}
+h2{
+    color: purple;
+    text-align: center;
+    animation-duration: 2s;
+    animation-name: slidein;
+  
+}
+
+
+@keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%;
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
+h5{
+    color: orange;
+}
+input{
+    display: flex;
+    justify-content: center;
+   
+}
+
+form{
+  margin-left: 40%;
+  animation-duration: 2s;
+  animation-name: input;
+
+}
+
+@keyframes input {
+    from {
+        margin-left: 100%;
+        width: 300%;
+     
+    }
+  
+    to {
+        margin-left: 40%;
+        width: 100%;
+     
+    }
+  }
+  #img0{
+    margin-right: 40%;
+    animation-duration: 3s;
+    animation-name: vigile;
+  
+  }
+
+
+@keyframes vigile {
+    from {
+        margin-left: 100%;
+       
+     
+    }
+  
+    to {
+        margin-left: 0%;
+       
+     
+    }
+}
+
+#img2{
+    height: 150px;
+    margin-top: 150px;
+    margin-left: 250px;
+    animation-duration: 3s;
+    animation-name: heros;
+}
+
+#img3{
+  
+   
+    
+
+}

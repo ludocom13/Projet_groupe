@@ -1,7 +1,7 @@
 @extends('layouts')
 
 @section('contenu')
-<h1>FREEFLIX</h1>
+<h2>FREEFLIX</h2>
 <h5>le cinema gratuit dans son cocon</h5>
 
 <div class="touch">

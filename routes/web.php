@@ -1,9 +1,10 @@
 <?php
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Utilisateur;
-use App\Http\Controllers\Connexion;
+use App\Http\Controllers\ConnexionController;
 use App\Http\Controllers\ConnexionstaffController;
 use App\Http\Controllers\Inscriptiontraitement;
+use App\Http\Controllers\InscriptionController;
 
 /*
 |--------------------------------------------------------------------------

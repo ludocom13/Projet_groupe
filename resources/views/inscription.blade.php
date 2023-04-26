@@ -42,5 +42,7 @@
 </form>
 
 
+<img id="img2" src="https://fr.web.img5.acsta.net/newsv7/18/02/15/14/58/5693765.jpg">
+
 
 @endsection
