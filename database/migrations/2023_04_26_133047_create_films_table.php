@@ -11,16 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::disableForeignKeyConstraints();
-
-        Schema::create('groupes', function (Blueprint $table) {
+        Schema::create('films', function (Blueprint $table) {
             $table->id();
-            $table->string('nom');
-            $table->bigInteger('evenement_id');
-            $table->foreign('evenement_id')->references('id')->on('evenements');
+            $table->string('titre', 100);
+            $table->date('annee');
+            $table->string('auteur', 100);
+            $table->string('categorie');
+            $table->string('annonce');
         });
-
-        Schema::enableForeignKeyConstraints();
     }
 
     /**
@@ -28,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('groupes');
+        Schema::dropIfExists('films');
     }
 };

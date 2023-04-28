@@ -13,12 +13,10 @@ return new class extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-        Schema::create('utilisateurs_evenements', function (Blueprint $table) {
+        Schema::create('groupes', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('utilisateurs');
-            $table->unsignedBigInteger('evenement_id');
-            $table->foreign('evenement_id')->references('id')->on('evenements');
+            $table->bigInteger('films_id');
+            $table->foreign('films_id')->references('id')->on('films');
         });
 
         Schema::enableForeignKeyConstraints();
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('utilisateurs_evenements');
+        Schema::dropIfExists('groupes');
     }
 };

@@ -1,0 +1,35 @@
+body{
+     background-color:black;
+     color:white;
+}
+h1{
+    text-align: center;
+}
+ul{
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+}
+img{border:8px solid burlywood ;
+    width: 15%;
+}
+div.para{
+   border: solid burlywood 5px;
+  justify-content: space-between;display: flex;
+ 
+  margin-top: 5%;
+  font-size: 20px;
+}
+li{
+    font-size: 25px;
+    color: white;    
+}
+:hover{
+    color: greenyellow;
+}
+#titre{
+    color:yellow;
+    }
+ul.action{
+    display: flex;
+}

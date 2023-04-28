@@ -24,6 +24,11 @@ class Utilisateur extends Authenticatable
         'prenom',
         'email',
         'mot_de_passe',
+        
+        
+    ];
+    protected $guarded = [
+        'fonction'
     ];
 
     /**
@@ -35,5 +40,8 @@ class Utilisateur extends Authenticatable
         'mot_de_passe',
     ];
 
-    
+    public function getAuthPassword()
+    {
+        return $this->mot_de_passe;   
+    }
 }
