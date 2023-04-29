@@ -15,9 +15,9 @@ class Film extends Model
         'annee',
         'auteur',
         'annonce',
-
+        'categorie',
     ];
     protected $guarded =[
-        'categorie',
+        "id",
     ] ;
 }

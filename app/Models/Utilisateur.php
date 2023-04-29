@@ -24,12 +24,11 @@ class Utilisateur extends Authenticatable
         'prenom',
         'email',
         'mot_de_passe',
-        
-        
+        'fonction',
     ];
-    protected $guarded = [
-        'fonction'
-    ];
+    protected $guarded =[
+        "id",
+    ] ;
 
     /**
      * The attributes that should be hidden for serialization.
