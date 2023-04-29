@@ -20,13 +20,6 @@
     @if($errors->has('email'))
     <p>{{ $errors->first ('email') }}</p>
     @endif
-
-
-    <input type="text" placeholder="Nom d'utilisateurs" name="pseudo">
-
-    @if($errors->has('pseudo'))
-    <p>{{ $errors->first ('pseudo') }}</p>
-    @endif
    
     <input type="submit" value="se connecter" name="validez">
 

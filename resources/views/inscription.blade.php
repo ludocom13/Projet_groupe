@@ -25,11 +25,9 @@
     <p>{{ $errors->first ('email') }}</p>
     @endif
 
-    <input type="text" placeholder="Nom d'utilisateurs" name="pseudo">
 
-    @if($errors->has('pseudo'))
-    <p>{{ $errors->first ('pseudo') }}</p>
-    @endif
+
+   
     <input type="text" placeholder="mot de passe " name="mot_de_passe">
 
     @if($errors->has('mot_de_passe'))

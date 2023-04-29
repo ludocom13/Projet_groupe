@@ -22,7 +22,7 @@ class ConnexionController extends Controller
 
 Auth::attempt([
          'email'=> $request->get('email'),
-         'pseudo'=> $request->get('pseudo'),
+         
          'mot_de_passe'=> $request->input('password'),
 ]);
 
