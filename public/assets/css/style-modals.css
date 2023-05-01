@@ -1,0 +1,141 @@
+.madals-overlay {
+
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(1, 22, 61, 0.9);
+  transition: 0.3s;
+  z-index: 10299;
+}
+
+.madals-overlay::before {
+
+  position: absolute;
+  top: 8%;
+  right: 10%;
+  left: 10%;
+  padding: 15px 0;
+  background-color: green;
+  background-image: url('../../logos/conditions.png');
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 60px 48px;
+  /*background-color: #D74C05;*/
+  box-shadow: 0 8px 6px -6px black;
+  content: '';
+
+  font-weight: 700;
+  color: #fff;
+  font-family: var(--font-primary);
+  font-size: 110% !important;
+  text-transform: uppercase;
+  padding-left: 65px;
+  height: 50px;
+  cursor: pointer;
+
+}
+
+
+.madals-overlay .titreModal {
+
+  position: absolute;
+  top: 8%;
+  left: 15%;
+  padding: 15px 0;
+  height: 50px;
+  font-weight: 700;
+  color: #fff;
+  font-family: var(--font-primary);
+  font-size: 110% !important;
+  text-transform: uppercase;
+
+
+}
+
+.madals-overlay .closer-modals {
+  position: absolute;
+  top: 9%;
+  right: 11%;
+  font-size: 36px !important;
+}
+
+.closer-modals {
+  color: #DF0101;
+  font-size: 36px;
+  cursor: pointer;
+  line-height: 0;
+  transition: 0.5s;
+  font-weight: 700;
+
+}
+
+
+
+.madals-overlay .form-modals {
+  display: block;
+  position: absolute;
+  top: 13.2%;
+  right: 10%;
+  bottom: 30px;
+  left: 10%;
+  padding: 30px 15px;
+  background-color: #fff;
+  overflow-y: auto;
+  transition: 0.3s;
+}
+
+
+
+.form-modals .content-form {
+
+  border: 1px solid grey;
+  width: calc(100%);
+  min-height: calc(75%);
+
+}
+
+@media (max-width: 991px) {
+
+  .madals-overlay .titreModal {
+    left: 31%;
+  }
+
+  
+
+
+}
+
+
+
+@media (max-width: 767.98px) {
+
+  .madals-overlay::before {
+    top: 10px;
+    right: 0;
+    left: 0;
+
+  }
+
+  .madals-overlay .titreModal {
+
+    top: 10px;
+    left: 68px;
+  }
+
+  .madals-overlay .closer-modals {
+    top: 18px;
+    right: 15px;
+  }
+
+  .madals-overlay .form-modals {
+    top: 60px;
+    right: 0px;
+    bottom: 25px;
+    left: 0px;
+  }
+
+}
+

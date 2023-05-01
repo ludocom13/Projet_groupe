@@ -1,0 +1,167 @@
+.footer {
+    position: relative;
+    background-color: rgba(14, 19, 52, 0.9);
+    padding: 20px 10px 0;
+    color: white;
+}
+
+.footer h4 {
+    font-size: 18px;
+    font-weight: 700;
+    position: relative;
+    border-bottom: 2px solid grey;
+}
+
+.footer .fmenus ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer .fmenus ul li {
+  display: flex;
+  align-items: center;
+  padding: 7px 0;
+
+}
+
+.footer .fmenus ul i {
+  padding-right: 7px;
+  margin-right: 7px !important;
+  color: rgba(13, 66, 255, 0.8);
+  font-size: 12px;
+  line-height: 0;
+}
+
+.footer .fmenus ul li a {
+
+    margin-left: 7px;
+    color: rgba(255, 255, 255, 0.6);
+    transition: 0.3s;
+    line-height: 1;
+}
+
+.footer .fmenus ul li:hover {
+  
+    cursor: pointer;
+}
+
+
+.footer .fmenus ul li:hover a {
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 105%;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
+.footer .footer-credits {
+    background-color: rgba(14, 19, 52, 0.2) !important;
+    margin: 7px -10px auto;
+    padding-top: 7px;
+    padding-bottom: 30px;
+}
+
+.footer .fcredits .fauteur {
+
+    margin-bottom: 7px;
+
+}
+
+
+.footer .fcredits h5 {
+    
+    color: white;
+    font-size: 16px;
+    border-bottom: 1px solid var(--color-primary);
+}
+
+.footer .fcredits h5 > i {
+    line-height: 1;
+    font-size: 22px !important;
+    margin-right: 7px !important;
+    font-weight: 600 !important;
+    color: var(--color-primary) !important;
+}
+
+.footer .fcredits .fauteur a {
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    font-size: 22px;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 7px 10px !important;
+    transition: 0.3s;
+}
+
+.footer .fcredits .fauteur a i {
+    line-height: 1;
+    font-size: 22px;
+    margin: 0 auto;
+}
+
+.footer .fcredits .fauteur a:hover {
+  color: #fff;
+  border-color: #fff;
+}
+
+
+.scroll-top {
+  position: fixed;
+  padding: 7px;
+  right: 30px;
+  bottom: 5%;
+  z-index: 1024;
+  background: #1977cc;
+  width: 42px;
+  height: 42px;
+  line-height: 42px;
+  border-radius: 50%;
+  list-style: none;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  -webkit-user-drag: none;
+  cursor: pointer;
+  transition: all 0.4s;
+  text-align: center;
+  align-content: center;
+  align-items: center;
+  overflow: hidden;
+  display: none;
+
+}
+
+.scroll-top > i {
+    
+  font-size: 36px;
+  color: #FFFFFF !important;
+  line-height: 0;
+  margin: 0 auto 0 -4px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+
+}
+
+.scroll-top:hover,
+.scroll-top:focus {
+
+  width: 46px;
+  height: 46px;
+  color: #fff;
+  font-weight: 600;
+  background: rgba(6, 12, 34, 0.98);
+  border: 2px solid #1977cc;
+  
+}
