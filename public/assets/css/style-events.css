@@ -143,14 +143,14 @@
 /* */
 .evt-btn {
     background-color: #0d6efd;
-    color: white;
+    color: white !important;
     font-size: 105% !important;
 }
 
 .evt-btn:hover,
 .evt-btn:focus {
     background-color: #000;
-    color: #fff;
+    color: #fff !important;
 }
 
 .evt-btn .evt-btn-icon {

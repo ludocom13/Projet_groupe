@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : lun. 01 mai 2023 à 20:22
+-- Généré le : lun. 01 mai 2023 à 21:29
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.1.13
 
@@ -375,6 +375,7 @@ CREATE TABLE IF NOT EXISTS `reservations` (
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
+  `login` char(30) COLLATE utf8mb4_general_ci DEFAULT 'IDENTIFIANT',
   `nom` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `prenom` char(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT 'PRENOM',
   `email` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
@@ -396,11 +397,11 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Déchargement des données de la table `users`
 --
 
-INSERT INTO `users` (`id`, `nom`, `prenom`, `email`, `telephone`, `email_verif`, `password`, `cle_token`, `etat`, `statut`, `qualite`, `datEdite`, `dateMaj`) VALUES
-(1, 'ABOUDOU', 'ABOUDOU', 'aboudou@gmail.com', 102030405, 'aboudou@gmail.com_NON', '$2y$10$2ccTl20PnFirpoMckFuTfuyHwhUo2SIGh30iPbP4nWyvVMk2col8q', '$2y$10$wP1Jp72FoI9COuYQf8E7MOQRdkNGPtKmiX4N6ukLe35GuWXW4KNKG', 'VERIFICATION', 'EN COURS', 'PARTICULIER', '2023-04-14 18:33:22', '2023-04-14 18:33:22'),
-(2, 'KARIM', 'KARIM', 'bourguiba@gmail.com', 11, 'bourguiba@gmail.com_NON', '$2y$10$7WktfAoRKcxZmlZ.WBCdZelCrAsDmQe.v83UIgTlopti3O/hS4nA6', '6cPyxcLOyAcAy66UhpfW2Yq4stSRGZMK1bDDUm0MW3sxOjQndm9K2KmE7cAw', 'VERIFICATION', 'EN COURS', 'PARTICULIER', '2023-04-24 14:47:19', '2023-04-24 14:47:19'),
-(3, 'ABOUDOU', 'Assoumani', 'assoumani@gmail.com', 1384418783, 'assoumani@gmail.com_NON', '$2y$10$ytZXwyIQZNzLBhdrrTv4Xe/UHqs/cBwkIbUP12Rjm5938UM./v.Ta', 'eMnx4pnW1Hc4oCTKJE90Rqtfjqb5QIkU53uHO1vVUlTExY8DwCLaNIql5crl', 'VERIFICATION', 'EN COURS', 'PARTICULIER', '2023-04-30 15:24:46', '2023-04-30 15:24:46'),
-(4, 'KARIM', 'Mchangama', 'mchangama@gmail.com', 1757080800, 'mchangama@gmail.com_NON', '$2y$10$opTXuhKdtZyoPpjP/xkw/OV5DNhB/C6JCgwI32qo55ZOpP4s0JyPO', 'zcXCc8eNAzyOoHv70UN1fHTrYflJkkty1s3uXATNflIZjp6OGdtFAhT4ddhD', 'VERIFICATION', 'EN COURS', 'PARTICULIER', '2023-04-30 17:29:53', '2023-04-30 17:29:53');
+INSERT INTO `users` (`id`, `login`, `nom`, `prenom`, `email`, `telephone`, `email_verif`, `password`, `cle_token`, `etat`, `statut`, `qualite`, `datEdite`, `dateMaj`) VALUES
+(1, 'IDENTIFIANT', 'ABOUDOU', 'ABOUDOU', 'aboudou@gmail.com', 102030405, 'aboudou@gmail.com_NON', '$2y$10$2ccTl20PnFirpoMckFuTfuyHwhUo2SIGh30iPbP4nWyvVMk2col8q', '$2y$10$wP1Jp72FoI9COuYQf8E7MOQRdkNGPtKmiX4N6ukLe35GuWXW4KNKG', 'VERIFICATION', 'EN COURS', 'PARTICULIER', '2023-04-14 18:33:22', '2023-04-14 18:33:22'),
+(2, 'IDENTIFIANT', 'KARIM', 'KARIM', 'bourguiba@gmail.com', 11, 'bourguiba@gmail.com_NON', '$2y$10$7WktfAoRKcxZmlZ.WBCdZelCrAsDmQe.v83UIgTlopti3O/hS4nA6', '6cPyxcLOyAcAy66UhpfW2Yq4stSRGZMK1bDDUm0MW3sxOjQndm9K2KmE7cAw', 'VERIFICATION', 'EN COURS', 'PARTICULIER', '2023-04-24 14:47:19', '2023-04-24 14:47:19'),
+(3, 'IDENTIFIANT', 'ABOUDOU', 'Assoumani', 'assoumani@gmail.com', 1384418783, 'assoumani@gmail.com_NON', '$2y$10$ytZXwyIQZNzLBhdrrTv4Xe/UHqs/cBwkIbUP12Rjm5938UM./v.Ta', 'eMnx4pnW1Hc4oCTKJE90Rqtfjqb5QIkU53uHO1vVUlTExY8DwCLaNIql5crl', 'VERIFICATION', 'EN COURS', 'PARTICULIER', '2023-04-30 15:24:46', '2023-04-30 15:24:46'),
+(4, 'IDENTIFIANT', 'KARIM', 'Mchangama', 'mchangama@gmail.com', 1757080800, 'mchangama@gmail.com_NON', '$2y$10$opTXuhKdtZyoPpjP/xkw/OV5DNhB/C6JCgwI32qo55ZOpP4s0JyPO', 'zcXCc8eNAzyOoHv70UN1fHTrYflJkkty1s3uXATNflIZjp6OGdtFAhT4ddhD', 'VERIFICATION', 'EN COURS', 'PARTICULIER', '2023-04-30 17:29:53', '2023-04-30 17:29:53');
 
 -- --------------------------------------------------------
 

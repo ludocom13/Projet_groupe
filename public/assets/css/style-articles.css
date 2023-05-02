@@ -395,8 +395,8 @@ section {
 
 
 .doc-example .doc-example-content {
-    padding: 1.5rem;
-    font-size: .875rem;
+    padding: 1rem;
+    font-size: .9375rem;
     background-color: #fff;
     border: 1px solid #b8bec6;
     position: relative;
@@ -406,10 +406,10 @@ section {
     content: attr(data-label);
     display: block;
     position: absolute;
-    top: -8px;
+    top: -12px;
     left: 12px;
-    font-size: 10px;
-    font-weight: 600;
+    font-size: 15px;
+    font-weight: 700;
     text-transform: uppercase;
     background-color: inherit;
     color: #a8b1bb;

@@ -34,16 +34,45 @@
                 </li>
 
 
-                <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-
                 <li>
-                    <a class="getstarted scrollto d-none" href="{{route('R_deconnexion')}}">Déconnexion</a>
+                    <a class="nav-link scrollto" href="#contact">Contact</a>
                 </li>
 
+                @if (auth()->check())
 
-                <li>
-                    <a class="getstarted scrollto oppen-modals" href="{{route('R_connexion')}}">Connexion</a>
+                <li class="dropdown">
+
+                    <a class="getstarted" href="#">
+                        <span class="text-white">Mon compte</span>
+                        <i class="bi bi-chevron-down"></i>
+                    </a>
+                    <ul class="me-auto">
+                        <li>
+                            <a class="scrollto" href="{{route('R_profil', [Auth::id(), hash('sha256', Auth::user()->nom)])}}">Mon profil</a>
+                        </li>
+                        <li><a href="#">Drop Down 2</a></li>
+                        <li><a href="#">Drop Down 3</a></li>
+                        <li><a href="#">Drop Down 4</a></li>
+                        
+                        <hr class="style14" />
+
+                        <li class="px-2">
+                            <a class="btn btn-primary btn-sm evt-btn w-auto scrollto" href="{{route('R_deconnexion')}}">Déconnexion</a>
+                        </li>
+
+                    </ul>
+
                 </li>
+                    
+                    
+
+                @else
+
+                    <li>
+                        <a class="getstarted scrollto oppen-modals" href="{{route('R_connexion')}}">Connexion</a>
+                    </li>
+
+                @endif
                     
                     
 

@@ -13,16 +13,17 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('nom');
-            $table->char('prenom')->nullable()->default('PRENOM');
-            $table->string('email')->unique();
+            $table->char('login', 30)->nullable()->default('IDENTIFIANT');
+            $table->string('nom', 191);
+            $table->char('prenom', 191)->nullable()->default('PRENOM');
+            $table->string('email', 191)->unique();
             $table->integer('telephone')->unique()->nullable()->default(102030405);
-            $table->text('email_verif')->nullable()->default(null);
-            $table->string('password');
-            $table->string('cle_token')->nullable()->default(null);
-            $table->char('etat')->default('EN COURS');
-            $table->char('statut')->default('ACTIF');
-            $table->char('qualite')->default('PARTICULIER');
+            $table->text('email_verif')->nullable();
+            $table->string('password', 191);
+            $table->string('cle_token', 191)->nullable()->default(null);
+            $table->char('etat', 191)->default('EN COURS');
+            $table->char('statut', 191)->default('ACTIF');
+            $table->char('qualite', 30)->default('PARTICULIER');
             $table->timestamp('datEdite');
             $table->timestamp('dateMaj')->nullable()->default(null);
         });

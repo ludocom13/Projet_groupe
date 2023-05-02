@@ -194,7 +194,7 @@
         <div class="my-5 text-center">
 
             <a href="{{route('R_addEvent')}}" class="btn btn-primary btn-md w-auto my-2 mx-3 evt-btn">
-                <i class="fas fa-thumbs-up fa-lg mr-0 text-white evt-btn-icon"></i>
+                <i class="fas fa-calendar-plus fa-lg mr-0 text-white evt-btn-icon"></i>
                 <span class="d-none d-md-inline">Ajouter un événement</span>
             </a>
 
@@ -214,7 +214,7 @@
 
 <hr class="style14 mt-4">
 
-<div class="row my-4 d-none">
+<div class="row my-4">
 
     <div class="col-lg-12 mx-auto">
 
@@ -257,21 +257,19 @@
 
 
             <li class="fw-bold">
-                Find <code>.env.example</code>
-                file at root folder and rename it to <code>.env</code> by running below command Or also can manually rename it:
+                Mise en place de la fonction <code>QR code</code>
+                réservée à l'identification des <code>utilisateurs</code> connectés:
             </li>
 
-            <p class="mt-3"><strong>Fonction QR code:</strong></p>
-
             <div class="doc-example my-4">
-                <div class="doc-example-content" data-label="Terminal/Command">
+                <div class="doc-example-content" data-label="Fonction/QR code">
                     <div class="doc-clipboard">
                         <button type="button" class="btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" title="Copy to clipboard">
                             Copy
                         </button>
                     </div>
                     <pre class="docs-code">
-                        {{-- $qrcodEvent --}}
+                        {{$codeQR}}
                     </pre>
                 </div>
             </div>

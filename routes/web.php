@@ -63,7 +63,7 @@ Route::controller(UserController::class)->group( function () {
     Route::patch('/users/edit/{id}', 'update')->name('R_updateDetails');
     Route::delete('/users/edit/{id}', 'suppr')->name('R_suppr');
 
-    Route::get('/users/profil/{name}', 'profil')->name('R_profil')->middleware('auth');
+    Route::get('/profil/{name}', 'profil')->name('R_profil')->middleware('auth');
     Route::get('/deconnexion', 'logout')->name('R_deconnexion')->middleware('auth');
 
 

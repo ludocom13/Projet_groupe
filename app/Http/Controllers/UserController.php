@@ -45,12 +45,18 @@ class UserController extends Controller
         
         $listUers           = User::all()->count();
         $newRang            = $listUers + 1;
-        $setRang            = rand($newRang, (99 + $newRang)).rand(112, 312).$newRang;
-        $falsePhone         = rand(1234567891, 2345678912);
+        $longRang           = strlen($newRang);
+        $numParaph          = rand(1234567891, 2345678912);
+        
+        $falsePhone         = substr($numParaph, 0, (10 - $longRang) ).$newRang;
+
+        $login              = strtoupper( substr($request->nom, 0, 2).substr($request->prenom, 0, 1) . substr($falsePhone, 3) );
+
 
 
         $Persong            =  User::create([
 
+            'login'         => $login,
             'nom'           => strtoupper( trim($request->nom) ),
             'prenom'        => ucwords( trim($request->prenom) ),
             'email'         => strtolower( trim($request->email) ),
@@ -111,6 +117,35 @@ class UserController extends Controller
     }
 
 
+
+
+    /**
+     * 
+    */
+    public function profil(string $id)
+    {
+        //Récupération des données détails de $request->id soumis
+        $thisAuth           = User::query()
+                                ->where('id', $id)
+                                ->firstOrFail();
+
+
+        $nomAuth            = $thisAuth->nom;
+        $id                 = $thisAuth->id;
+        $loginUser          = $thisAuth->login;
+        $user_Qr            = QrCode::size(200)->generate($loginUser);
+
+        return view('layouts.contents.utilisateurs.profil',
+            [   'onDetails' => $thisAuth,
+                'rang'      => $id,
+                'tags'      => $nomAuth,
+                'Qr_user'   => $user_Qr, 
+            ]
+        );
+    
+    }
+
+
     /**
     * Log the user out of the application.
     *
@@ -129,29 +164,8 @@ class UserController extends Controller
     }
 
 
-    /**
-     * 
-    */
-    public function profil(string $id)
-    {
-        //Récupération des données détails de $request->id soumis
-        $thisAuth           = User::query()
-                                ->where('id', $id)
-                                ->firstOrFail();
 
 
-        $nomAuth            = $thisAuth->nom;
-        $id                 = $thisAuth->id;
-        $iUser              = $thisAuth->login;
-
-        return view('layouts.contents.utilisateurs.profil',
-            [   'onDetails' => $thisAuth,
-                'rang'      => $id,
-                'tags'      => $nomAuth,
-                'login'     => $iUser, 
-            ]
-        );
-    }
 
     /**
      * Display the specified resource.
