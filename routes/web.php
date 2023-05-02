@@ -54,6 +54,10 @@ Route::controller(UserController::class)->group( function () {
     Route::get('/inscription/', 'formInscription')->name('R_inscription');
     Route::post('/users/registre', 'registre')->name('R_regInscription');
 
+    //Route de création d'un utilisateur depuis un profil
+    Route::get('/inscription/Ajout', 'formCreatUser')->name('R_addUser')->middleware('auth');
+    Route::post('/users/registre/', 'storUser')->name('R_regUser')->middleware('auth');
+
     Route::get('/users/reset/', 'formReset')->name('R_formReset');
     Route::get('/users/envoi', 'updatePass')->name('R_updatePass');
 
@@ -85,6 +89,11 @@ Route::controller(EventController::class)->group( function () {
 
 
     Route::get('/evenements/event/{name}', 'showEvent')->name('R_detailEvent')->middleware('auth');
+
+    Route::patch('/evenements/modif/{id}', 'forModifEvent')->name('R_modifEvent');
+
+    Route::patch('/evenements/update/{name}', 'updateEvent')->name('R_regModifEvent');
+    Route::delete('/evenements/modif/{id}', 'destroyEvent')->name('R_supprEvent');
 
     
 

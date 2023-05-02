@@ -219,10 +219,22 @@
 
         <div class="my-5 text-center">
 
+            @if (auth()->check() && Auth::user()->qualite == 'ADMIN') 
+
             <a href="{{route('R_addEvent')}}" class="btn btn-primary btn-md w-auto my-2 mx-3 evt-btn">
                 <i class="fas fa-calendar-plus fa-lg mr-0 text-white evt-btn-icon"></i>
                 <span class="d-none d-md-inline">Ajouter un événement</span>
             </a>
+
+            @else
+
+            <a href="{{route('R_addEvent')}}" class="btn btn-primary btn-md w-auto my-2 mx-3">
+                <i class="fas fa-calendar-plus fa-lg mr-0 text-white evt-btn-icon"></i>
+                <span class="d-none d-md-inline">Ajouter un événement</span>
+            </a>
+
+
+            @endif
 
         </div>
 

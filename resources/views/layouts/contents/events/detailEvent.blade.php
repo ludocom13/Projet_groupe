@@ -30,38 +30,70 @@
    
    <div class="boxes ">
 
-        <p class="h-dash text-center">{{$evt_titre}}</p>
+        <a href="{{route('R_events')}}" class="btn btn-primary btn-md w-auto my-2 mx-3 evt-btn">
+            <i class="fas fa-chevron-left fa-lg mr-0 text-white evt-btn-icon"></i>
+            <span class="d-none d-md-inline">Retour</span>
+        </a>
+
+        <p class="h-dash text-center">
+            {{$evt_titre}}
+        </p>
 
         <div class="">
 
             <div class="box2 mt-3">
                 <div class="d-flex mt-2 ">
-                    <span class="fas fa-users-cog mt-1"></span>
+                    <span class="fas fa-users-cog mt-1 d-none"></span>
+                    <span class="fas fa-bookmark mt-1"></span>
                     <div class="w-100 border-bottom">
-                        <p class="fw-bold mb-1">Manage my network</p>
-                        <p class="textmuted mb-2">Access and Manage your connection events and interests all in once
-                            place</p>
+                        <p class="textmuted mb-1">Titre de l'évenement</p>
+                        <p class=" fw-bold mb-2">{{$evt_titre}}</p>
                     </div>
                 </div>
                 <div class="d-flex mt-2">
-                    <span class="fas fa-money-bill-alt mt-1"></span>
+                    <span class="fas fa-signs-post mt-1"></span>
                     <div class="w-100 border-bottom">
-                        <p class="fw-bold mb-1">Salary insights</p>
-                        <p class="textmuted mb-2">
-                            See how your Salary compares to others in the communtiy
-                        </p>
+                        <p class="textmuted mb-1">Lieu du déroulement</p>
+                        <p class=" fw-bold mb-2">{{$evt_lieu}}</p>
                     </div>
                 </div>
+
+                <div class="d-flex mt-2">
+                    <span class="fas fa-calendar-check ms-0 mt-1"></span>
+                    <div class="w-100 ps-2">
+                        <p class="textmuted mb-1">Date et heure</p>
+                        <p class=" fw-bold mb-2">{{$evt_datEdit . ' | ' . $evt_heure}}</p>
+                    </div>
+                </div>
+
+
+
+
+
                 <div class="d-flex mt-2">
                     <span class="fas fa-bookmark ms-0 mt-1"></span>
                     <div class="w-100 ps-2">
-                        <p class="fw-bold mb-1">My items</p>
-                        <p class="textmuted mb-2">keep track of your jobs courses and article</p>
+                        <p class="textmuted mb-1">Titre de l'évenement</p>
+                        <p class=" fw-bold mb-2">{{$evt_titre}}</p>
                     </div>
                 </div>
+
+
+
+
+                <div class="d-flex mt-2">
+                    <span class="fas fa-bookmark ms-0 mt-1"></span>
+                    <div class="w-100 ps-2">
+                        <p class="textmuted mb-1">Descriptions</p>
+                        <p class=" fw-bold mb-2">{{$evt_desc}}</p>
+                    </div>
+                </div>
+
             </div>
         </div>
 
+
+        <!-- Activités des groupes -->
         <div class="row rows mx-0 mt-2">
 
             <div class="col-md-4 p-0 border-end">
@@ -85,6 +117,37 @@
                     <p>Gestion des projets</p>
                 </div>
             </div>
+
+        </div>
+
+
+
+
+        <hr class="style14 mt-4">
+
+        <div class="my-5 text-center">
+
+            @if (auth()->check() && Auth::user()->qualite == 'ADMIN') 
+
+            <a href="{{route('R_modifEvent', $evt_id)}}" class="btn btn-primary btn-md w-auto my-2 mx-3 evt-btn">
+                <i class="fas fa-pencil-alt fa-lg mr-0 text-white evt-btn-icon"></i>
+                <span class="d-none d-md-inline">Modifier</span>
+            </a>
+
+            <a href="{{route('R_supprEvent', $evt_id)}}" class="btn btn-danger btn-md w-auto my-2 mx-3">
+                <i class="fas fa-trash fa-lg mr-0 text-white evt-btn-icon"></i>
+                <span class="d-none d-md-inline">Supprimer</span>
+            </a>
+
+            @else
+
+            <a href="{{route('R_partEvent')}}" class="btn btn-primary btn-md w-auto my-2 mx-3">
+                <i class="fas fa-calendar-plus fa-lg mr-0 text-white evt-btn-icon"></i>
+                <span class="d-none d-md-inline">Participer</span>
+            </a>
+
+
+            @endif
 
         </div>
 

@@ -4,10 +4,10 @@
 @section('formulaire')
 <div id="formInscription" class="madals-overlay">
 
-    <a href="{{route('page.index')}}">
+    <a href="{{route('R_equipe')}}">
         <i class="bi bi-x closer-modals"></i>
     </a>
-    <span class="titreModal">Inscription</span>
+    <span class="titreModal">Création d'un utilisateur</span>
 
     <div class="form-modals">
 
@@ -23,7 +23,7 @@
 
                             <div class="p-4 p-md-5 flex-grow-1">
 
-                                <form action="{{route('R_regInscription')}}" method="POST">
+                                <form action="{{route('R_regUser')}}" method="POST">
 
                                     @csrf
 
@@ -68,38 +68,10 @@
                                     </div>
 
 
-                                    <div class="row gx-2">
-
-                                        <div class="mb-3 col-sm-6">
-                                            <label class="form-label mb-0" for="password">Mot de passe</label>
-                                            <input class="form-control form-control-lg form-control-a @error('password') is-invalid @enderror" type="password" autocomplete="off" onpaste="return false" id="password" name="password" maxlength="24" placeholder="Mot de passe" value="{{old('password')}}" />
-
-                                            @error('password')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-
-                                        </div>
-
-                                        <div class="mb-3 col-sm-6">
-                                            <label class="form-label mb-0" for="creat-confirm-password">Confirmation mot de passe</label>
-                                            <input class="form-control form-control-lg form-control-a @error('creatConfirmPassword') is-invalid @enderror" type="password" autocomplete="off" onpaste="return false" maxlength="24" id="creatConfirmPassword" name="password_confirmation" placeholder="Confirmation du mot de passe" />
-
-                                            @error('creatConfirmPassword')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-
-                                        </div>
-
-                                    </div>
-
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" id="creat-register-checkbox" />
                                         <label class="form-label" for="creat-register-checkbox">
-                                            En cochant cette case, vous acceptez les <a href="#!">conditions </a>et la <a href="#!">politique d'utilisation des services</a> FREEFLIX
+                                            En cochant cette case, vous acceptez les <a href="#!">conditions </a>et la <a href="#!">politique d'utilisation des services</a> d'ajout d'un utilisateur
                                         </label>
                                     </div>
                                     
@@ -148,9 +120,19 @@
 
 
 
-                                    <div class="mb-3">
-                                        <button class="btn btn-primary d-block w-100 mt-3" type="submit" name="submit">Enregistrer</button>
+                                    <div class="row g-2 mt-2 mb-3">
+                                        <div class="col-sm-6">
+                                            <button class="btn btn-primary d-block w-100" type="submit" name="submit">Valider</button>
+                                        </div>
+
+                                        <div class="col-sm-6">
+                                            <a class="btn btn-danger d-block w-100" href="{{route('R_equipe')}}">
+                                                Annuler
+                                            </a>
+                                        </div>
+
                                     </div>
+
 
                                 </form>
 
@@ -170,7 +152,7 @@
 
                         <div class="col-md-5 flex-center d-none d-sm-flex">
                             
-                            <img class="bg-auth-circle-shape" src="logos/reunion.png" alt="" width="">
+                            <img class="bg-auth-circle-shape" src="../../logos/reunion.png" alt="" width="">
                             
 
                         </div>

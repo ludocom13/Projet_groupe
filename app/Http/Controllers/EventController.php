@@ -138,6 +138,85 @@ class EventController extends Controller
 
 
     /**
+     * Affichage du formulaire de modification d'un événement
+    */
+    public function forModifEvent(string $id)
+    {
+        //Récupération des données détails de $request->id soumis
+        $thisEvent          = Evenement::query()
+                                ->where('id', $id)
+                                ->firstOrFail();
+
+
+        $idEvent            = $thisEvent->id;
+        $nomEvent           = $thisEvent->titre;
+        $idUser             = $thisEvent->agent;
+
+        return view('layouts.contents.events.modifEvent',
+            [   'onDetails' => $thisEvent,
+                'rang'      => $idEvent,
+                'tags'      => $nomEvent,
+                'agentEvt'  => $idUser, 
+            ]
+        );
+    }
+
+
+    /**
+     * Mise à jour des modification sur un groupe.
+     */
+    public function updateEvent(Request $request, string $id)
+    {
+        
+        $request->validate([
+
+            'evtTitle'     => ['required', 'string', 'min:5', 'max:150'], 
+            'evtDate'      => ['required', 'date'],
+            'evtHeure'     => ['required', 'string'], 
+            'evtLieu'      => ['required', 'string', 'min:5', 'max:150'], 
+            'evtDescript'  => ['required', 'string', 'min:10', 'max:250'],
+            'evtLink'      => ['string'], 
+        ]);
+
+
+        $varDate            = explode("-", $request->evtDate);
+        $datEvent           = new Date($request->evtDate . ' '. $request->evtHeure . ':'. 0);
+
+
+        //Récupération des données détails de $request->id soumis
+        /*$thisEvent          = Evenement::findOrFail($id);
+
+        $idEvent            = $thisEvent->id;
+        $nomEvent           = $thisEvent->titre;
+        $idUser             = $thisEvent->agent;
+
+        $thisEvent->titre       = strtoupper( trim( $request->evtTitle) ),
+        $thisEvent->lieu        = strtoupper( trim( $request->evtLieu) ),
+        $thisEvent->description = trim( $request->evtDescript),
+        $thisEvent->date        = $datEvent,
+        $thisEvent->statut      = 'EN COURS',
+        $thisEvent->datEdite    = Date::now(),
+        $thisEvent->dateMaj     = Date::now(),
+        $thisEvent->agent       = Auth::id(),
+        $thisEvent->link_img    = trim($request->evtLink),
+        $thisEvent->save();
+
+        return view('layouts.contents.events.detailEvent',
+            [   'onDetails' => $thisEvent,
+                'rang'      => $idEvent,
+                'tags'      => $nomEvent,
+                'agentEvt'  => $idUser, 
+            ]
+        );
+
+        */
+
+        
+    }
+
+
+
+    /**
      * Display the specified resource.
      */
     public function show(string $id)

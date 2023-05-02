@@ -18,11 +18,20 @@ class UserController extends Controller
 {
 
     /**
-     * Show the form for creating a new resource.
+     * Affichage du formulaire d'inscription
      */
     public function formInscription()
     {
         return view('layouts.contents.formulaires.inscription');
+    }
+
+
+    /**
+     * Affichage du formulaire d'ajout d'un utilisateur
+     */
+    public function formCreatUser()
+    {
+        return view('layouts.contents.formulaires.creatUser');
     }
 
 
@@ -45,6 +54,58 @@ class UserController extends Controller
         
         $listUers           = User::all()->count();
         $newRang            = $listUers + 1;
+
+        $longRang           = strlen($newRang);
+        $numParaph          = rand(1234567891, 2345678912);
+        
+        $falsePhone         = substr($numParaph, 0, (10 - $longRang) ).$newRang;
+
+        $login              = strtoupper( substr($request->nom, 0, 2).substr($request->prenom, 0, 1) . substr($falsePhone, 3) );
+
+
+
+        $Persong            =  User::create([
+
+            'login'         => $login,
+            'nom'           => strtoupper( trim($request->nom) ),
+            'prenom'        => ucwords( trim($request->prenom) ),
+            'email'         => strtolower( trim($request->email) ),
+            'telephone'     => $falsePhone,
+            'email_verif'   => strtolower( trim($request->email) )."_NON",
+            'password'      => Hash::make($login),
+            'cle_token'     => Str::random(60),
+            'etat'          => "VERIFICATION",
+            'statut'        => "EN COURS",
+            'datEdite'      => Date::now(),
+            'dateMaj'       => Date::now(),
+
+
+                            ]);
+
+       return redirect()->route('R_connexion', ['successRequest' => $request,]);
+    
+    }
+
+
+    /**
+     * Enregistrement d'un utilisateur ajouté par admin
+     */
+    public function storUser(Request $request)
+    {
+        //PREPARATION D'INSERTION
+
+        $validatedData      = $request->validate([
+
+            'nom'           => ['required', 'string', 'min:3', 'max:60'],
+            'prenom'        => ['required', 'string', 'min:3', 'max:60'],
+            'email'         => ['required', 'string', 'email', 'max:255', 'unique:users'],
+        ]);
+
+        
+        
+        $listUers           = User::all()->count();
+        $newRang            = $listUers + 1;
+        
         $longRang           = strlen($newRang);
         $numParaph          = rand(1234567891, 2345678912);
         
@@ -72,7 +133,7 @@ class UserController extends Controller
 
                             ]);
 
-       return redirect()->route('R_connexion', ['successRequest' => $request,]);
+       return redirect()->route('R_equipe');
     
     }
 
@@ -161,6 +222,24 @@ class UserController extends Controller
         $request->session()->regenerateToken();
      
         return redirect('/');
+    }
+
+
+
+    /**
+     * 
+    */
+    public function equipe()
+    {
+        $allUsers           = User::all();
+        $nmbrUsers          = $allUsers->count();    
+
+        return view('layouts.contents.utilisateurs.utilisateurs',
+            [   'listUsers'  => $allUsers,
+                'comptUsers'=> $nmbrUsers, 
+            ]
+        );
+    
     }
 
 

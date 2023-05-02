@@ -4,8 +4,8 @@
     <div class="container-fluid d-flex align-items-center justify-content-between">
 
         <a href="{{route('page.index')}}" class="logo d-flex align-items-center">
-            <img src="logos/reunion.png" alt="LOGO" class="img-fluid">
-            <span>My Event</span>
+            <img src="logos/freeflix.png" alt="LOGO" class="img-fluid">
+            <span>Freeflix</span>
         </a>
 
         <nav id="navbar" class="navbar">
@@ -16,7 +16,7 @@
                 </li>
 
                 <li>
-                    <a class="nav-link scrollto" href="#services">Equipes</a>
+                    <a class="nav-link scrollto" href="{{route('R_equipe')}}">Equipes</a>
                 </li>
                 
                 <li class="dropdown">

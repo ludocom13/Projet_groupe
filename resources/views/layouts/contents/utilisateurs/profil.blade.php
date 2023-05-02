@@ -303,8 +303,8 @@
 
 
 
-
-<div class="row mt-4">
+@if (auth()->check() && Auth::user()->qualite == 'ADMIN')
+<div class="row mt-4  ">
 
     <div class="doc-example">
 
@@ -407,8 +407,7 @@
     </div>
     
 </div>
-
-
+@endif
 
 
 @endsection
