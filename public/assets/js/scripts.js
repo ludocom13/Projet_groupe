@@ -139,6 +139,25 @@
     }, true);
 
 
+    //Commenter un événement
+    on('click', '.oppen-comment', function(e) {
+
+        const divComment = this.getAttribute('data-comment');
+        select("evtComment1").value = "Tu as bien cliqué !";
+        if (select(divComment).classList.contains('d-none')) {
+            select(divComment).classList.remove('d-none');
+            select(divComment).classList.add('d-block');
+        }
+
+        else {
+
+            select(divComment).classList.remove('d-block');
+            select(divComment).classList.add('d-none'); 
+        }
+
+    }, true);
+
+
     /**
     * Scrool with ofset on links with a class name .scrollto
     */

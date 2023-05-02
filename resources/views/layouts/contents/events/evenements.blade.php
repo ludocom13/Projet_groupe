@@ -76,23 +76,48 @@
                             <div class="d-flex align-items-center justify-content-between mt-1">
                      
                                 <ul class="list-inline small me-2">
-                                  <li><img src="https://img.icons8.com/material-outlined/10/000000/filled-circle--v1.png"> 8th Gen Intel Core i5-8250U processor</li>
-                                  <li><img src="https://img.icons8.com/material-outlined/10/000000/filled-circle--v1.png"> 15.5 Inch | Antiglare Display</li>
-                                  <li><img src="https://img.icons8.com/material-outlined/10/000000/filled-circle--v1.png"> 4GB RAM with Radeon 530 2GB Graphics</li>
+                                    <li>
+                                        <img src="https://img.icons8.com/material-outlined/10/000000/filled-circle--v1.png">
+                                        Public concerné : {{$evt_public}}
+                                    </li>
+                                    <li>
+                                        <img src="https://img.icons8.com/material-outlined/10/000000/filled-circle--v1.png">
+                                        Participants : {{$evt_parts}}
+                                    </li>
+                                    <li>
+                                        <img src="https://img.icons8.com/material-outlined/10/000000/filled-circle--v1.png">
+                                        Organisateurs : 0
+                                    </li>
                                 </ul>
 
                                 <ul class="list-inline small me-2">
-                                  <li><img src="https://img.icons8.com/material-outlined/10/000000/filled-circle--v1.png"> EMI Starts at 1726. No cost EMI available</li>
-                                  <li><img src="https://img.icons8.com/material-outlined/10/000000/filled-circle--v1.png"> Warranty: 6 Months Warranty</li>
-                                  <li><img src="https://img.icons8.com/material-outlined/10/000000/filled-circle--v1.png"> In Stock: 24 units sold this week</li>
-                                  
+                                    <li>
+                                        <img src="https://img.icons8.com/material-outlined/10/000000/filled-circle--v1.png">
+                                        Visiteurs : {{$evt_click}}
+                                    </li>
+                                    <li>
+                                        <img src="https://img.icons8.com/material-outlined/10/000000/filled-circle--v1.png">
+                                        Commentaires : {{$evt_comment}}
+                                    </li>
+                                    <li>
+                                        <img src="https://img.icons8.com/material-outlined/10/000000/filled-circle--v1.png">
+                                        Likes : {{$evt_notes}}
+                                    </li>
                                 </ul>
 
                                 <ul class="list-inline small me-2">
-                                  <li><img src="https://img.icons8.com/material-outlined/10/000000/filled-circle--v1.png"> EMI Starts at 1726. No cost EMI available</li>
-                                  <li><img src="https://img.icons8.com/material-outlined/10/000000/filled-circle--v1.png"> Warranty: 6 Months Warranty</li>
-                                  <li><img src="https://img.icons8.com/material-outlined/10/000000/filled-circle--v1.png"> In Stock: 24 units sold this week</li>
-                                  
+                                    <li>
+                                        <img src="https://img.icons8.com/material-outlined/10/000000/filled-circle--v1.png">
+                                        Date de création : {{$evt_datEdit}}
+                                    </li>
+                                    <li>
+                                        <img src="https://img.icons8.com/material-outlined/10/000000/filled-circle--v1.png">
+                                        Mise à jour : {{$evt_dateMaj}}
+                                    </li>
+                                    <li>
+                                        <img src="https://img.icons8.com/material-outlined/10/000000/filled-circle--v1.png">
+                                        Statut : {{$evt_statut}}
+                                    </li>
                                 </ul>
 
                                 
@@ -101,15 +126,15 @@
 
                             <div class="d-flex my-2">
 
-                                <a href="" class="btn btn-primary btn-md w-auto my-2 mx-3 evt-btn">
-                                    <i class="fas fa-thumbs-up fa-lg mr-0 text-white evt-btn-icon"><small class="ml-2 d-sm-none">20</small class="ml-2 d-sm-none"></i>
+                                <button class="btn btn-primary btn-md w-auto my-2 mx-3 evt-btn">
+                                    <i class="fas fa-thumbs-up fa-lg mr-0 text-white evt-btn-icon"><small class="ml-2 d-sm-none">{{$evt_notes}}</small class="ml-2 d-sm-none"></i>
                                     <span class="d-none d-md-inline">Liker</span>
-                                </a>
+                                </button>
 
-                                <a href="" class="btn btn-primary btn-md w-auto my-2 mx-3 evt-btn">
-                                    <i class="fas fa-comments fa-lg mr-0 text-white evt-btn-icon"><small class="ml-2 d-sm-none">20</small></i>
+                                <button class="btn btn-primary btn-md w-auto my-2 mx-3 evt-btn oppen-comment" data-comment="#commentaire{{$evt_id}}">
+                                    <i class="fas fa-comments fa-lg mr-0 text-white evt-btn-icon"><small class="ml-2 d-sm-none">{{$evt_comment}}</small></i>
                                     <span class="d-none d-md-inline">Commenter</span>
-                                </a>
+                                </button>
 
                                 <a href="{{route('R_detailEvent', $evt_id)}}" class="btn btn-primary btn-md w-auto my-2 mx-3 evt-btn">
                                     <i class="fas fa-eye fa-lg mr-0 text-white evt-btn-icon"><small class="ml-2 d-sm-none">20</small class="ml-2 d-sm-none"></i>
@@ -118,13 +143,14 @@
 
                             </div>
 
-                            <form action="" method="POST" class="form-comment d-none">
+                            <div id="commentaire{{$evt_id}}" class="form-comment">
                                 @csrf
+
                                 <div class="input-group mb-3"> 
 
-                                    <input type="text" class="form-control form-control-lg form-control-a @error('evtComment') is-invalid @enderror" id="evtComment" name="evtComment" placeholder="Commentaire">
+                                    <input type="text" class="form-control form-control-lg form-control-a @error('evtComment{{$evt_id}}') is-invalid @enderror" id="evtComment{{$evt_id}}" name="evtComment{{$evt_id}}" placeholder="Commentaire">
 
-                                    @error('evtComment')
+                                    @error('evtComment{{$evt_id}}')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -136,7 +162,7 @@
 
                                 </div>
 
-                            </form>
+                            </div>
 
                             
 
@@ -214,7 +240,7 @@
 
 <hr class="style14 mt-4">
 
-<div class="row my-4">
+<div class="row my-4 d-none">
 
     <div class="col-lg-12 mx-auto">
 

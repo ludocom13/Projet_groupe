@@ -222,7 +222,7 @@
 .boxes {
     background-color: #e1f5fe;
     padding: 30px;
-    border-radius: 10px;
+    border-radius: 0;
 }
 
 .rows {

@@ -80,10 +80,10 @@
                                 </div>
 
                                 <div class="gap-3 mt-3 icons d-flex flex-row justify-content-center align-items-center">
-                                    <span><i class="fa fa-twitter"></i></span>
-                                    <span><i class="fab fa-facebook-f"></i></span>
-                                    <span><i class="fab fa-instagram"></i></span>
-                                    <span><i class="fab fa-linkedin"></i></span>
+                                    <a href=""><i class="fab fa-twitter"></i></a>
+                                    <a href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a href=""><i class="fab fa-instagram"></i></a>
+                                    <a href=""><i class="fab fa-linkedin"></i></a>
                                 </div>
                                 <div class=" px-2 rounded mt-4 date ">
                                     <span class="join">Inscrit le, {{$us_datInscript}}</span>
@@ -99,70 +99,6 @@
 
             </div><!-- // bagde d'utilisateur -->
 
-
-            <div class="doc-example my-1">
-
-                <div class="doc-example-content" data-label="Autorisation">
-
-                    <div class="card p-3 mb-2">
-                        <div class="d-flex align-items-center justify-content-between">
-                            <div>
-                                <p class="fw-bold">Fonction admin</p>
-                                <small class="text-muted">
-                                    Peut intervenir en tant qu'admin
-                                </small>
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <p class="pe-3">NON</p>
-                                <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" id="SwitchCheck">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card p-3 mb-2">
-                        <div class="d-flex align-items-center justify-content-between">
-                            <div>
-                                <p class="fw-bold">Fonction staff</p>
-                                <small class="text-muted">
-                                    Peut intervenir en tant que Staff
-                                </small>
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <p class="pe-3">NON</p>
-                                <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" id="SwitchCheck">
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="card p-3 mb-2">
-
-                        <div class="d-flex align-items-center justify-content-between">
-                            <div>
-                                <p class="fw-bold">Fonction particulière</p>
-                                <small class="text-muted">
-                                    Domaine d'intervention limité
-                                </small>
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <p class="pe-3">OUI</p>
-                                <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" id="SwitchCheck">
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div><!-- //Fonctions/Autorisations -->
 
         </div>
 
@@ -438,7 +374,7 @@
 
                     <div class="tbody-content">
 
-                        <ul class="bg-danger overflow-x-auto">                            
+                        <ul class="overflow-x-auto">                            
                             <li>{{$us_login}}</li>
 
                             <li class="d-flex align-items-center ov">

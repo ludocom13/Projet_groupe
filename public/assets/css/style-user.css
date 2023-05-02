@@ -40,8 +40,25 @@
     font-weight: 500
 }
 
-.icons i {
-    font-size: 19px
+.icons a {
+
+    display: flex;
+    padding: 7px;
+    border-radius: 50%;
+    border: none;
+    height: 30px;
+    width: 30px;
+    align-content: center;
+    align-items: center;
+    outline: none;
+    text-decoration: none;
+    text-align: center;
+}
+
+.icons a i {
+    margin: 0 auto !important;
+    font-size: 22px;
+    line-height: 1;
 }
 
 hr .new1 {

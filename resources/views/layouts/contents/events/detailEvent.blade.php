@@ -3,7 +3,99 @@
 @section('content')
 
 
-<section class="pb-3">
+
+    @php
+
+        $evt_id         = $onDetails->id;
+        $evt_titre      = $onDetails->titre;
+        $evt_lieu       = $onDetails->lieu;
+        $evt_desc       = $onDetails->description;
+        $evt_date       = Date::create($onDetails->date)->format('d/m/Y');
+        $evt_heure      = Date::create($onDetails->date)->format('H:i');
+        $evt_comment    = $onDetails->comments;
+        $evt_notes      = $onDetails->notes;
+        $evt_parts      = $onDetails->participants;
+        $evt_public     = $onDetails->public;
+        $evt_click      = $onDetails->click;
+        $evt_statut     = $onDetails->statut;
+        $evt_datEdit    = Date::create($onDetails->datEdite)->format('d/m/Y');
+        $evt_dateMaj    = Date::create($onDetails->dateMaj)->format('d/m/Y H:i');
+        $evt_agent      = $onDetails->agent;
+        $evt_link       = $onDetails->link_img;
+
+    @endphp
+
+
+<section class="pt-0 pb-3">
+   
+   <div class="boxes ">
+
+        <p class="h-dash text-center">{{$evt_titre}}</p>
+
+        <div class="">
+
+            <div class="box2 mt-3">
+                <div class="d-flex mt-2 ">
+                    <span class="fas fa-users-cog mt-1"></span>
+                    <div class="w-100 border-bottom">
+                        <p class="fw-bold mb-1">Manage my network</p>
+                        <p class="textmuted mb-2">Access and Manage your connection events and interests all in once
+                            place</p>
+                    </div>
+                </div>
+                <div class="d-flex mt-2">
+                    <span class="fas fa-money-bill-alt mt-1"></span>
+                    <div class="w-100 border-bottom">
+                        <p class="fw-bold mb-1">Salary insights</p>
+                        <p class="textmuted mb-2">
+                            See how your Salary compares to others in the communtiy
+                        </p>
+                    </div>
+                </div>
+                <div class="d-flex mt-2">
+                    <span class="fas fa-bookmark ms-0 mt-1"></span>
+                    <div class="w-100 ps-2">
+                        <p class="fw-bold mb-1">My items</p>
+                        <p class="textmuted mb-2">keep track of your jobs courses and article</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row rows mx-0 mt-2">
+
+            <div class="col-md-4 p-0 border-end">
+                <div class="viewbox">
+                    <p class="blue">11</p>
+                    <p>Groupe et personnage</p>
+                </div>
+
+            </div>
+
+            <div class="col-md-4 p-0 border-end">
+                <div class="viewbox">
+                    <p class="blue">0</p>
+                    <p>Articles et projets</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 p-0">
+                <div class="viewbox">
+                    <p class="blue">1</p>
+                    <p>Gestion des projets</p>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div> 
+
+
+</section>
+
+
+<section class="pb-3 d-none">
 
     <div class="head-section">
         <h2 class="text-left">
@@ -16,26 +108,7 @@
 
         <table class="table bg-white table-bordered">
 
-            @php
-
-                $evt_id         = $onDetails->id;
-                $evt_titre      = $onDetails->titre;
-                $evt_lieu       = $onDetails->lieu;
-                $evt_desc       = $onDetails->description;
-                $evt_date       = Date::create($onDetails->date)->format('d/m/Y');
-                $evt_heure      = Date::create($onDetails->date)->format('H:i');
-                $evt_comment    = $onDetails->comments;
-                $evt_notes      = $onDetails->notes;
-                $evt_parts      = $onDetails->participants;
-                $evt_public     = $onDetails->public;
-                $evt_click      = $onDetails->click;
-                $evt_statut     = $onDetails->statut;
-                $evt_datEdit    = Date::create($onDetails->datEdite)->format('d/m/Y');
-                $evt_dateMaj    = Date::create($onDetails->dateMaj)->format('d/m/Y H:i');
-                $evt_agent      = $onDetails->agent;
-                $evt_link       = $onDetails->link_img;
-
-            @endphp
+            
 
 
             <tbody>
